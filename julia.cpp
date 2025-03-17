@@ -5,9 +5,9 @@ Julia::Julia(QWidget *parent)
 
 void Julia::generateFractal(QPainter &painter) {
     const int maxIterations = 100;
-    const double zoom = 400.0;
-    const double offsetX = -width()/2.0;
-    const double offsetY = -height()/2.0;
+    const double zoom = 350;
+    const double offsetX = -width()/2;
+    const double offsetY = -height()/2;
     const std::complex<double> c(-0.4, 0.6);
 
     for(int y = 0; y < height(); y++) {
@@ -18,7 +18,7 @@ void Julia::generateFractal(QPainter &painter) {
             );
             
             int iterations = 0;
-            while(std::abs(z) < 2.0 && iterations < maxIterations) {
+            while(std::abs(z) < 2 && iterations < maxIterations) {
                 z = z * z + c;
                 iterations++;
             }

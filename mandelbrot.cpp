@@ -4,9 +4,9 @@ Mandelbrot::Mandelbrot(QWidget *parent) : FractalWidget(parent) {}
 
 void Mandelbrot::generateFractal(QPainter &painter) {
     const int maxIterations = 100;
-    const double zoom = 300.0;
-    const double offsetX = -width()/2.0;
-    const double offsetY = -height()/2.0;
+    const double zoom = 300;
+    const double offsetX = -width()/2;
+    const double offsetY = -height()/2;
 
     for(int y = 0; y < height(); y++) {
         for(int x = 0; x < width(); x++) {
@@ -18,7 +18,7 @@ void Mandelbrot::generateFractal(QPainter &painter) {
             std::complex<double> z(0, 0);
             int iterations = 0;
             
-            while(std::abs(z) < 2.0 && iterations < maxIterations) {
+            while(std::abs(z) < 2 && iterations < maxIterations) {
                 z = z * z + c;
                 iterations++;
             }

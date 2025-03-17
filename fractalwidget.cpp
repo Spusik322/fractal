@@ -2,7 +2,7 @@
 
 FractalWidget::FractalWidget(QWidget *parent)
     : QWidget(parent) {
-    setFixedSize(1000, 1000);
+    setFixedSize(1300, 1000);
 }
 
 void FractalWidget::paintEvent(QPaintEvent *event) {
@@ -16,5 +16,5 @@ QColor FractalWidget::getColor(int iterations, int maxIterations) {
     if(iterations == maxIterations) return Qt::black;
     
     double t = (double)iterations / maxIterations;
-    return QColor::fromHsvF(t * 0.3 + 0.5, static_cast<float> (0.8), 1.0 - t);
+    return QColor::fromHsvF(t * 0.3 + 0.5, static_cast<float> (0.8), 1 - t);
 }
